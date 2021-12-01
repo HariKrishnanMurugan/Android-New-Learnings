@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_16"
+    android:layout_marginTop="@dimen/spacing_6"
+    android:layout_marginEnd="@dimen/spacing_16">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_contact_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/spacing_15"
+            android:layout_marginTop="@dimen/spacing_15"
+            android:layout_marginBottom="@dimen/spacing_15"
+            android:src="@drawable/ic_default_user"
+            app:layout_constraintBottom_toBottomOf="@+id/layout"
+            app:layout_constraintCircleRadius="@dimen/spacing_10"
+            app:layout_constraintRight_toLeftOf="@+id/tv_contact_name"
+            app:layout_constraintStart_toStartOf="@+id/layout"
+            app:layout_constraintTop_toTopOf="@id/layout"/>
+
+        <TextView
+            android:id="@+id/tv_contact_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_9"
+            android:layout_marginTop="@dimen/spacing_24"
+            android:layout_marginEnd="@dimen/spacing_9"
+            android:layout_marginBottom="@dimen/spacing_24"
+            android:textColor="@color/black"
+            android:textSize="@dimen/font_18"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_contact_follow"
+            app:layout_constraintStart_toEndOf="@+id/iv_contact_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Chris Jonathan"/>
+
+        <TextView
+            android:id="@+id/tv_contact_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_24"
+            android:layout_marginEnd="@dimen/spacing_14"
+            android:layout_marginBottom="@dimen/spacing_24"
+            android:gravity="center"
+            android:text="@string/follow"
+            android:textColor="@color/pink"
+            android:fontFamily="@font/roboto_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/layout"
+            app:layout_constraintEnd_toEndOf="@+id/layout"
+            app:layout_constraintStart_toEndOf="@+id/tv_contact_name"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
