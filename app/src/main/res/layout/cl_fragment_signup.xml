@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/sign_up_layout"
     android:layout_width="match_parent"
@@ -13,63 +12,52 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@id/sign_up_layout"
         app:layout_constraintStart_toStartOf="@id/sign_up_layout"
-        app:layout_constraintTop_toTopOf="@id/sign_up_layout" />
+        app:layout_constraintTop_toTopOf="@id/sign_up_layout"/>
 
     <ScrollView
         android:id="@+id/sv_sign_up"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/sign_up_layout"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/sign_up_layout"
-        app:layout_constraintTop_toBottomOf="@id/sign_up_toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@id/sign_up_toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/sv_layout"
+            android:id="@+id/cl_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_firstName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_16"
+                style="@style/SignupCardViewStyle"
                 android:layout_marginTop="@dimen/spacing_16"
-                app:layout_constraintBottom_toBottomOf="@+id/cv_lastName"
+                android:layout_marginEnd="0dp"
                 app:layout_constraintEnd_toStartOf="@id/cv_lastName"
-                app:layout_constraintRight_toLeftOf="@id/cv_lastName"
-                app:layout_constraintStart_toStartOf="@id/sv_layout"
-                app:layout_constraintTop_toTopOf="@id/sv_layout">
+                app:layout_constraintStart_toStartOf="@id/cl_layout"
+                app:layout_constraintTop_toTopOf="@id/cl_layout">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_firstName_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_firstName"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/first_name"
-                        app:layout_constraintBottom_toTopOf="@id/tie_firstName"
+                        app:layout_constraintBottom_toTopOf="@id/et_firstName"
                         app:layout_constraintStart_toStartOf="@id/cv_firstName_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_firstName_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_firstName_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_firstName"
-                        style="@style/EditTextStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_firstName"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/first_name"
-                        android:inputType="text"
                         app:layout_constraintBottom_toBottomOf="@id/cv_firstName_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_firstName_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_firstName_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_firstName" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_firstName"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
@@ -79,120 +67,90 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/spacing_4"
-                android:layout_marginTop="@dimen/spacing_16"
-                android:layout_marginEnd="@dimen/spacing_16"
-                android:layout_marginBottom="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@id/sv_layout"
-                app:layout_constraintLeft_toRightOf="@id/cv_firstName"
-                app:layout_constraintRight_toRightOf="@id/sv_layout"
+                app:layout_constraintBottom_toBottomOf="@id/cv_firstName"
+                app:layout_constraintEnd_toEndOf="@id/cv_company"
                 app:layout_constraintStart_toEndOf="@id/cv_firstName"
-                app:layout_constraintTop_toTopOf="@id/sv_layout">
+                app:layout_constraintTop_toTopOf="@id/cv_firstName">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_lastName_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/spacing_15"
-                    app:layout_constraintBottom_toBottomOf="@+id/cv_firstName_layout"
-                    app:layout_constraintTop_toTopOf="@+id/cv_firstName_layout">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_lastName"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/last_name"
-                        android:textColor="@color/dustyGray"
-                        android:textSize="@dimen/font_14"
-                        app:layout_constraintBottom_toTopOf="@id/tie_lastName"
-                        app:layout_constraintEnd_toEndOf="@id/cv_lastName_layout"
-                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintBottom_toTopOf="@id/et_lastName"
                         app:layout_constraintStart_toStartOf="@id/cv_lastName_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_lastName_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_lastName_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_lastName"
-                        style="@style/EditTextStyle"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_lastName"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/last_name"
-                        android:inputType="text"
                         app:layout_constraintBottom_toBottomOf="@id/cv_lastName_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_lastName_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_lastName_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_lastName" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_lastName"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_company"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@+id/cv_lastName"
-                app:layout_constraintStart_toStartOf="@+id/cv_firstName"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_firstName">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_company_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_company"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/company"
-                        app:layout_constraintBottom_toTopOf="@id/tie_company"
+                        app:layout_constraintBottom_toTopOf="@id/et_company"
                         app:layout_constraintStart_toStartOf="@id/cv_company_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_company_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_company_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_company"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_company"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/company_name"
-                        android:inputType="text"
                         app:layout_constraintBottom_toBottomOf="@id/cv_company_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_company_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_company_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_company" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_company"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_email"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@+id/cv_company"
-                app:layout_constraintStart_toStartOf="@+id/cv_company"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_company">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_layout_new_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_email"
-                        style="@style/TextViewStyle"
+                        style="@style/TextViewCommonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/email"
-                        app:layout_constraintBottom_toTopOf="@id/tie_email"
+                        app:layout_constraintBottom_toTopOf="@id/et_email"
                         app:layout_constraintStart_toStartOf="@id/cv_layout_new_password"
-                        app:layout_constraintTop_toTopOf="@id/cv_layout_new_password" />
+                        app:layout_constraintTop_toTopOf="@id/cv_layout_new_password"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_email"
-                        style="@style/EditTextStyle"
+                        android:id="@+id/et_email"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/spacing_40"
                         android:hint="@string/email"
@@ -200,212 +158,162 @@
                         app:layout_constraintBottom_toBottomOf="@id/cv_layout_new_password"
                         app:layout_constraintEnd_toEndOf="@id/cv_layout_new_password"
                         app:layout_constraintStart_toStartOf="@id/cv_layout_new_password"
-                        app:layout_constraintTop_toBottomOf="@id/tv_email" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_email"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_phone"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@+id/cv_email"
-                app:layout_constraintStart_toStartOf="@+id/cv_email"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_email">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_phone_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_phone"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/phone"
-                        app:layout_constraintBottom_toTopOf="@id/tie_phone"
+                        app:layout_constraintBottom_toTopOf="@id/et_phone"
                         app:layout_constraintStart_toStartOf="@id/cv_phone_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_phone_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_phone_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_phone"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_phone"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/mobile_number"
-                        android:inputType="phone"
                         android:maxLength="10"
                         app:layout_constraintBottom_toBottomOf="@id/cv_phone_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_phone_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_phone_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_password"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@+id/cv_phone"
-                app:layout_constraintStart_toStartOf="@+id/cv_phone"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_phone">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_password_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_password"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/password"
-                        app:layout_constraintBottom_toTopOf="@id/tie_password"
+                        app:layout_constraintBottom_toTopOf="@id/et_password"
                         app:layout_constraintStart_toStartOf="@id/cv_password_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_password_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_password_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_password"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
-
+                        android:id="@+id/et_password"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/password"
                         android:inputType="textVisiblePassword"
                         app:layout_constraintBottom_toBottomOf="@id/cv_password_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_password_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_password_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_password" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_password"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_confirm"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                app:layout_constraintEnd_toEndOf="@+id/cv_password"
-                app:layout_constraintStart_toStartOf="@+id/cv_password"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_password">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_confirm_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_confirm"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/confirm_password"
-                        app:layout_constraintBottom_toTopOf="@id/tie_confirm"
+                        app:layout_constraintBottom_toTopOf="@id/et_confirm_password"
                         app:layout_constraintStart_toStartOf="@id/cv_confirm_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_confirm_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_confirm_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_confirm"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_confirm_password"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/password"
                         android:inputType="textVisiblePassword"
                         app:layout_constraintBottom_toBottomOf="@id/cv_confirm_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_confirm_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_confirm_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_confirm" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_confirm"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_address"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_6"
-                android:layout_marginBottom="@dimen/spacing_75"
-                app:layout_constraintBottom_toBottomOf="@+id/sv_layout"
-                app:layout_constraintEnd_toEndOf="@+id/cv_confirm"
-                app:layout_constraintStart_toStartOf="@+id/cv_confirm"
+                style="@style/SignupCardViewStyle"
+                android:layout_marginBottom="@dimen/spacing_16"
+                app:layout_constraintBottom_toBottomOf="@+id/cl_layout"
+                app:layout_constraintEnd_toEndOf="@+id/cl_layout"
+                app:layout_constraintStart_toStartOf="@+id/cl_layout"
                 app:layout_constraintTop_toBottomOf="@id/cv_confirm">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cv_address_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginHorizontal="@dimen/spacing_15">
+                    style="@style/EditProfileConstraintLayoutStyle">
 
                     <TextView
                         android:id="@+id/tv_address"
-                        style="@style/TextViewStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        style="@style/TextViewCommonStyle"
                         android:text="@string/address"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toTopOf="@id/cv_address_layout" />
+                        app:layout_constraintTop_toTopOf="@id/cv_address_layout"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_street1"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
+                        android:id="@+id/et_street1"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/street"
-                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="@id/cv_address_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tv_address" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_address"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_street2"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
-                        android:layout_marginTop="@dimen/spacing_4"
+                        android:id="@+id/et_street2"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/street"
-                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="@id/cv_address_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tie_street1" />
+                        app:layout_constraintTop_toBottomOf="@id/et_street1"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_city"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
-                        android:layout_marginTop="@dimen/spacing_4"
+                        android:id="@+id/et_city"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/city"
-                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="@id/cv_address_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tie_street2" />
+                        app:layout_constraintTop_toBottomOf="@id/et_street2"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_state"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
-                        android:layout_marginTop="@dimen/spacing_4"
+                        android:id="@+id/et_state"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:hint="@string/state"
-                        android:inputType="text"
                         app:layout_constraintEnd_toEndOf="@id/cv_address_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tie_city" />
+                        app:layout_constraintTop_toBottomOf="@id/et_city"/>
 
                     <com.example.internproject_revamp.widgets.CLEditText
-                        android:id="@+id/tie_pin_code"
-                        style="@style/EditTextStyle"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/spacing_40"
-                        android:layout_marginTop="@dimen/spacing_4"
+                        android:id="@+id/et_pin_code"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
                         android:layout_marginBottom="@dimen/spacing_15"
                         android:hint="@string/pin_code"
                         android:inputType="number"
@@ -413,11 +321,9 @@
                         app:layout_constraintBottom_toBottomOf="@id/cv_address_layout"
                         app:layout_constraintEnd_toEndOf="@id/cv_address_layout"
                         app:layout_constraintStart_toStartOf="@id/cv_address_layout"
-                        app:layout_constraintTop_toBottomOf="@id/tie_state" />
-
+                        app:layout_constraintTop_toBottomOf="@id/et_state"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

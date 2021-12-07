@@ -30,6 +30,7 @@
     <color name="seashell_grey">#F1F1F1</color>
     <color name="black_two">#030303</color>
     <color name="semiTransparentBlack70">#B3000000</color>
+    <color name="cerise_red">#eb3878</color>
 
     <!-- Cab status -->
     <color name="cab_status_free">#3FBC77</color>
@@ -44,6 +45,5 @@
     <color name="cab_status_low_rev">#FEC10A</color>
     <color name="cab_status_disc">#CFCFCF</color>
     <color name="cab_status_blocked">#188097</color>
-    <color name="pink">#eb3878</color>
     <color name="cab_status_free_last_trip">#D41DF6</color>
 </resources>

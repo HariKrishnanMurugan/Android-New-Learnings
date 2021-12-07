@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,52 +7,36 @@
     android:background="@color/concrete_grey">
 
     <com.example.internproject_revamp.widgets.CLEditText
-        android:id="@+id/tie_email_alert"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/spacing_15"
-        android:layout_marginVertical="@dimen/spacing_15"
-        android:fontFamily="@font/roboto_regular"
+        android:id="@+id/et_email_id"
+        style="@style/EditTextCommonStyle.EmailAlertStyle"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:padding="@dimen/spacing_10"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_17"
-        app:layout_constraintBottom_toTopOf="@id/tie_phone_alert"
+        app:layout_constraintBottom_toTopOf="@id/et_mobile_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="abc@gmail.com"/>
 
     <com.example.internproject_revamp.widgets.CLEditText
-        android:id="@+id/tie_phone_alert"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/et_mobile_number"
+        style="@style/EditTextCommonStyle.EmailAlertStyle"
         android:layout_marginTop="@dimen/spacing_4"
-        android:layout_marginBottom="@dimen/spacing_15"
         android:hint="@string/mobile_number"
         android:inputType="phone"
         android:maxLength="10"
-        android:padding="@dimen/spacing_10"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textSize="@dimen/font_17"
         app:layout_constraintBottom_toTopOf="@id/btn_ok"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tie_email_alert"
-        app:layout_constraintTop_toBottomOf="@id/tie_email_alert"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_email_id"
         tools:text="94884908503"/>
 
     <com.example.internproject_revamp.widgets.CLMaterialButton
         android:id="@+id/btn_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/MaterialButtonCommonStyle"
+        android:layout_marginEnd="@dimen/spacing_15"
         android:layout_marginBottom="@dimen/spacing_15"
         android:text="@string/ok"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tie_phone_alert"/>
+        app:layout_constraintTop_toBottomOf="@id/et_mobile_number"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

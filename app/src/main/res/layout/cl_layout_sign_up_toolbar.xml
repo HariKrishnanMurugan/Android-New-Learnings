@@ -16,45 +16,33 @@
 
             <TextView
                 android:id="@+id/tv_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                style="@style/TextViewCommonStyle.ToolbarStyle"
                 android:padding="@dimen/spacing_10"
                 android:text="@string/cancel"
-                android:textColor="@color/pink"
-                android:textSize="@dimen/font_17"
                 app:layout_constraintBottom_toBottomOf="@id/tool_bar_constraint_layout"
                 app:layout_constraintRight_toLeftOf="@id/tool_bar_tv_signUp"
                 app:layout_constraintStart_toStartOf="@id/tool_bar_constraint_layout"
-                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout" />
+                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout"/>
 
             <TextView
                 android:id="@+id/tool_bar_tv_signUp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:padding="@dimen/spacing_10"
+                style="@style/TextViewCommonStyle.ToolbarStyle"
                 android:text="@string/signup"
                 android:textColor="@color/black"
-                android:textSize="@dimen/font_17"
                 app:layout_constraintBottom_toBottomOf="@id/tool_bar_constraint_layout"
                 app:layout_constraintLeft_toRightOf="@id/tv_cancel"
                 app:layout_constraintRight_toLeftOf="@id/tv_save"
-                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout" />
+                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout"/>
 
             <TextView
                 android:id="@+id/tv_save"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
+                style="@style/TextViewCommonStyle.ToolbarStyle"
                 android:padding="@dimen/spacing_10"
                 android:text="@string/save"
-                android:textColor="@color/pink"
-                android:textSize="@dimen/font_17"
                 app:layout_constraintBottom_toBottomOf="@id/tool_bar_constraint_layout"
                 app:layout_constraintEnd_toEndOf="@id/tool_bar_constraint_layout"
                 app:layout_constraintLeft_toRightOf="@id/tool_bar_tv_signUp"
-                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout" />
+                app:layout_constraintTop_toTopOf="@id/tool_bar_constraint_layout"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>

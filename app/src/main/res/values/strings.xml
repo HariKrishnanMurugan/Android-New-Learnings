@@ -19,7 +19,8 @@
     <string name="follow">Follow</string>
 
     <!--View Profile-->
-    <string name="phone">phone</string>
+    <string name="phone">Phone</string>
+    <string name="phone_number">Enter Phone Number</string>
     <string name="email_view_profile">email</string>
     <string name="address">address</string>
     <string name="view_social_profile">View Social Profile</string>
