@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contact_details_tool_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/concrete_grey">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar_contact_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint_contact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_contacts"
+                style="@style/TextViewCommonStyle.ToolbarStyle"
+                android:padding="@dimen/spacing_10"
+                android:text="@string/contacts"
+                app:layout_constraintBottom_toBottomOf="@+id/constraint_contact_layout"
+                app:layout_constraintRight_toLeftOf="@+id/tv_edit"
+                app:layout_constraintStart_toStartOf="@+id/constraint_contact_layout"
+                app:layout_constraintTop_toTopOf="@+id/constraint_contact_layout"/>
+
+            <TextView
+                android:id="@+id/tv_edit"
+                style="@style/TextViewCommonStyle.ToolbarStyle"
+                android:padding="@dimen/spacing_10"
+                android:text="@string/edit"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/constraint_contact_layout"
+                app:layout_constraintEnd_toEndOf="@+id/constraint_contact_layout"
+                app:layout_constraintTop_toTopOf="@+id/constraint_contact_layout"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+</com.google.android.material.appbar.AppBarLayout>

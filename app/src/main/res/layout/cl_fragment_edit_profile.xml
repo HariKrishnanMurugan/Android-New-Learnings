@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/edit_profile_tool_bar"
+        layout="@layout/cl_layout_edit_profile_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/sv_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/edit_layout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/edit_layout"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile_tool_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sv_edit_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/spacing_16"
+                android:layout_marginTop="@dimen/spacing_16"
+                android:layout_marginEnd="@dimen/spacing_6"
+                android:layout_marginBottom="@dimen/spacing_6"
+                app:layout_constraintBottom_toTopOf="@+id/cv_edit_company"
+                app:layout_constraintEnd_toStartOf="@+id/cv_edit_lastName"
+                app:layout_constraintStart_toStartOf="@+id/sv_edit_layout"
+                app:layout_constraintTop_toTopOf="@+id/sv_edit_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_image_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_edit_image"
+                        android:layout_width="@dimen/spacing_62"
+                        android:layout_height="@dimen/spacing_62"
+                        android:layout_marginHorizontal="@dimen/spacing_27"
+                        android:layout_marginTop="@dimen/spacing_53"
+                        android:src="@drawable/ic_default_user"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_edit_image"
+                        app:layout_constraintCircleRadius="@dimen/spacing_10"
+                        app:layout_constraintEnd_toEndOf="@+id/cl_image_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cl_image_layout"
+                        app:layout_constraintTop_toTopOf="@+id/cl_image_layout"/>
+
+                    <TextView
+                        android:id="@+id/tv_edit_image"
+                        style="@style/TextViewCommonStyle.ProfileImage"
+                        android:layout_marginTop="@dimen/spacing_7"
+                        android:layout_marginBottom="@dimen/spacing_53"
+                        android:text="@string/edit"
+                        app:layout_constraintBottom_toBottomOf="@+id/cl_image_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/cl_image_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cl_image_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/iv_edit_image"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_firstName"
+                style="@style/EditProfileCardViewStyle"
+                android:layout_marginStart="@dimen/spacing_136"
+                android:layout_marginEnd="@dimen/spacing_16"
+                app:layout_constraintBottom_toTopOf="@+id/cv_edit_lastName"
+                app:layout_constraintEnd_toEndOf="@id/sv_edit_layout"
+                app:layout_constraintStart_toStartOf="@id/sv_edit_layout"
+                app:layout_constraintTop_toTopOf="@+id/cv_edit_image">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_firstName_layout"
+                    style="@style/EditProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_edit_firstName"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/first_name"
+                        app:layout_constraintBottom_toTopOf="@id/tie_edit_firstName"
+                        app:layout_constraintStart_toStartOf="@id/cl_firstName_layout"
+                        app:layout_constraintTop_toTopOf="@id/cl_firstName_layout"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/tie_edit_firstName"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:hint="@string/first_name"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_firstName_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cl_firstName_layout"
+                        app:layout_constraintStart_toStartOf="@id/cl_firstName_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_edit_firstName"
+                        tools:text="John"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_lastName"
+                style="@style/EditProfileCardViewStyle"
+                app:layout_constraintBottom_toBottomOf="@+id/cv_edit_image"
+                app:layout_constraintEnd_toEndOf="@+id/cv_firstName"
+                app:layout_constraintStart_toStartOf="@+id/cv_firstName"
+                app:layout_constraintTop_toBottomOf="@id/cv_firstName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cv_lastName_layout"
+                    style="@style/EditProfileConstraintLayoutStyle"
+                    app:layout_constraintBottom_toBottomOf="@id/cv_edit_lastName"
+                    app:layout_constraintTop_toTopOf="@+id/cv_edit_lastName">
+
+                    <TextView
+                        android:id="@+id/tv_edit_lastName"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/last_name"
+                        app:layout_constraintBottom_toTopOf="@+id/et_lastName"
+                        app:layout_constraintStart_toStartOf="@id/cv_lastName_layout"
+                        app:layout_constraintTop_toTopOf="@id/cv_lastName_layout"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_lastName"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:hint="@string/last_name"
+                        app:layout_constraintBottom_toBottomOf="@id/cv_lastName_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cv_lastName_layout"
+                        app:layout_constraintStart_toStartOf="@id/cv_lastName_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_edit_lastName"
+                        tools:text="Chris"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_company"
+                style="@style/EditProfileCardViewStyle"
+                app:layout_constraintBottom_toTopOf="@id/cv_edit_phone"
+                app:layout_constraintEnd_toEndOf="@+id/cv_edit_lastName"
+                app:layout_constraintStart_toStartOf="@+id/cv_edit_image"
+                app:layout_constraintTop_toBottomOf="@id/cv_edit_lastName">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_company_layout"
+                    style="@style/EditProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_company"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/company"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_company"
+                        app:layout_constraintStart_toStartOf="@id/cl_company_layout"
+                        app:layout_constraintTop_toTopOf="@id/cl_company_layout"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_company"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:hint="@string/company_name"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_company_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cl_company_layout"
+                        app:layout_constraintStart_toStartOf="@id/cl_company_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_company"
+                        tools:text="ABC Company"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_phone"
+                style="@style/EditProfileCardViewStyle"
+                app:layout_constraintBottom_toTopOf="@+id/cv_edit_address"
+                app:layout_constraintEnd_toEndOf="@+id/cv_edit_company"
+                app:layout_constraintStart_toStartOf="@+id/cv_edit_company"
+                app:layout_constraintTop_toBottomOf="@id/cv_edit_company">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_phone_layout"
+                    style="@style/EditProfileConstraintLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/spacing_15">
+
+                    <TextView
+                        android:id="@+id/tv_edit_phone"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/phone"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_phone"
+                        app:layout_constraintStart_toStartOf="@id/cl_phone_layout"
+                        app:layout_constraintTop_toTopOf="@id/cl_phone_layout"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_phone"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:hint="@string/phone_number"
+                        android:inputType="phone"
+                        android:maxLength="10"
+                        app:layout_constraintBottom_toBottomOf="@id/cl_phone_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cl_phone_layout"
+                        app:layout_constraintStart_toStartOf="@id/cl_phone_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_edit_phone"
+                        tools:text="8497395793"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_edit_address"
+                style="@style/EditProfileCardViewStyle"
+                app:layout_constraintBottom_toTopOf="@id/tv_reset_password"
+                app:layout_constraintEnd_toEndOf="@+id/cv_edit_phone"
+                app:layout_constraintStart_toStartOf="@+id/cv_edit_phone"
+                app:layout_constraintTop_toBottomOf="@+id/cv_edit_phone">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/edit_address_layout"
+                    style="@style/EditProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_edit_address"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/address"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_street1"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toTopOf="@id/edit_address_layout"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_street1"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:hint="@string/street"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_street2"
+                        app:layout_constraintEnd_toEndOf="@id/edit_address_layout"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_edit_address"
+                        tools:text="3847-G"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_street2"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:layout_marginTop="@dimen/spacing_4"
+                        android:hint="@string/street"
+                        app:layout_constraintBottom_toTopOf="@id/et_edit_city"
+                        app:layout_constraintEnd_toEndOf="@id/edit_address_layout"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toBottomOf="@id/et_edit_street1"
+                        tools:text="Gandhi Rd"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_city"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:layout_marginTop="@dimen/spacing_4"
+                        android:hint="@string/city"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_state"
+                        app:layout_constraintEnd_toEndOf="@id/edit_address_layout"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toBottomOf="@id/et_edit_street2"
+                        tools:text="Adayar"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_state"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:layout_marginTop="@dimen/spacing_4"
+                        android:hint="@string/state"
+                        app:layout_constraintBottom_toTopOf="@+id/et_edit_pinCode"
+                        app:layout_constraintEnd_toEndOf="@id/edit_address_layout"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toBottomOf="@id/et_edit_city"
+                        tools:text="Chennai"/>
+
+                    <com.example.internproject_revamp.widgets.CLEditText
+                        android:id="@+id/et_edit_pinCode"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:layout_marginTop="@dimen/spacing_4"
+                        android:hint="@string/pin_code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        app:layout_constraintBottom_toBottomOf="@id/edit_address_layout"
+                        app:layout_constraintEnd_toEndOf="@id/edit_address_layout"
+                        app:layout_constraintStart_toStartOf="@id/edit_address_layout"
+                        app:layout_constraintTop_toBottomOf="@id/et_edit_state"
+                        tools:text="600028"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_reset_password"
+                style="@style/TextViewCommonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/spacing_40"
+                android:layout_marginTop="@dimen/spacing_6"
+                android:gravity="center"
+                android:text="@string/reset_password"
+                android:textColor="@color/cerise_red"
+                app:layout_constraintEnd_toEndOf="@+id/sv_edit_layout"
+                app:layout_constraintStart_toStartOf="@+id/sv_edit_layout"
+                app:layout_constraintTop_toBottomOf="@id/cv_edit_address"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

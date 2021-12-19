@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFFFF</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="semiTransparentBlack33">#33000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="alto">#DFDFDF</color>
+    <color name="semiTransparentAccent08">#14CA051E</color>
+    <color name="semiTransparentAccent">#FBEBED</color>
+    <color name="brownGrey">#1A979797</color>
+    <color name="whiteTwo">#F5F5F5</color>
+    <color name="dustyGray">#979797</color>
+    <color name="wildSand">#F5F5F5</color>
+    <color name="wildSandSolid">#F4F4F4</color>
+    <color name="semiTransparentBlack50">#80000000</color>
+    <color name="oceanGreen">#3EBC77</color>
+    <color name="maroon_flush">#C51F5A</color>
+    <color name="semiTransparentBlack20">#33000000</color>
+    <color name="concrete_grey">#F3F3F3</color>
+    <color name="semiTransparentDustyGray20">#33979797</color>
+    <color name="semiTransparentDustyGray30">#4D979797</color>
+    <color name="pale_grey">#F9F9FB</color>
+    <color name="rouge">#B01B20</color>
+    <color name="mid_green">#49B045</color>
+    <color name="amber">#FEC10E</color>
+    <color name="alto_grey">#D8D8D8</color>
+    <color name="atomic_tangerine">#FF9C66</color>
+    <color name="seashell_grey">#F1F1F1</color>
+    <color name="black_two">#030303</color>
+    <color name="semiTransparentBlack70">#B3000000</color>
+    <color name="cerise_red">#eb3878</color>
+
+    <!-- Cab status -->
+    <color name="cab_status_free">#3FBC77</color>
+    <color name="cab_status_kurb">#555555</color>
+    <color name="cab_status_assign">#EC3939</color>
+    <color name="cab_status_duty">#3B9EF8</color>
+    <color name="cab_status_picked">#064DBB</color>
+    <color name="cab_status_booth_reached">#10B9C0</color>
+    <color name="cab_status_package">#FC9F2F</color>
+    <color name="cab_status_logout">#C5155A</color>
+    <color name="cab_status_break">#8b4513</color>
+    <color name="cab_status_low_rev">#FEC10A</color>
+    <color name="cab_status_disc">#CFCFCF</color>
+    <color name="cab_status_blocked">#188097</color>
+    <color name="cab_status_free_last_trip">#D41DF6</color>
+</resources>

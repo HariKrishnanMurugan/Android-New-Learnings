@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/concrete_grey">
+
+    <include
+        android:id="@+id/tool_bar_contacts_profile"
+        layout="@layout/cl_layout_view_profile_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/detail_layout"
+        app:layout_constraintStart_toStartOf="@id/detail_layout"
+        app:layout_constraintTop_toTopOf="@id/detail_layout"/>
+
+    <ScrollView
+        android:id="@+id/sv_contact"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/spacing_50"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_layout"
+        app:layout_constraintEnd_toEndOf="@+id/detail_layout"
+        app:layout_constraintStart_toStartOf="@id/detail_layout"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_contacts_profile">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/sv_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_user_image"
+                android:layout_width="@dimen/spacing_62"
+                android:layout_height="@dimen/spacing_62"
+                android:layout_marginTop="@dimen/spacing_30"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_default_user"
+                app:layout_constraintBottom_toTopOf="@id/tv_contact_name"
+                app:layout_constraintEnd_toEndOf="@id/sv_layout"
+                app:layout_constraintStart_toStartOf="@id/sv_layout"
+                app:layout_constraintTop_toTopOf="@id/sv_layout"/>
+
+            <TextView
+                android:id="@+id/tv_contact_name"
+                style="@style/TextViewCommonStyle.ViewProfileTextView"
+                app:layout_constraintBottom_toTopOf="@id/tv_contact_name"
+                app:layout_constraintEnd_toEndOf="@id/sv_layout"
+                app:layout_constraintStart_toStartOf="@id/sv_layout"
+                app:layout_constraintTop_toBottomOf="@+id/iv_user_image"
+                tools:text="John"/>
+
+            <TextView
+                android:id="@+id/tv_contact_company_name"
+                style="@style/TextViewCommonStyle.ViewProfileTextView"
+                android:textColor="@color/semiTransparentBlack50"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toTopOf="@id/cv_mobile_number_display"
+                app:layout_constraintEnd_toEndOf="@id/sv_layout"
+                app:layout_constraintStart_toStartOf="@id/sv_layout"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contact_name"
+                tools:text="Mallow"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_mobile_number_display"
+                style="@style/SignupCardViewStyle"
+                android:layout_marginTop="@dimen/spacing_16"
+                app:layout_constraintBottom_toTopOf="@id/cv_email_display"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contact_company_name">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cv_contact_number"
+                    style="@style/ViewProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_phone_text"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/phone"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_phone_number"
+                        app:layout_constraintStart_toStartOf="@+id/cv_contact_number"
+                        app:layout_constraintTop_toTopOf="@+id/cv_contact_number"/>
+
+                    <TextView
+                        android:id="@+id/tv_phone_number"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        app:layout_constraintBottom_toBottomOf="@+id/cv_contact_number"
+                        app:layout_constraintEnd_toEndOf="@+id/cv_contact_number"
+                        app:layout_constraintStart_toStartOf="@+id/cv_contact_number"
+                        app:layout_constraintTop_toBottomOf="@id/tv_phone_text"
+                        tools:text="94783994858"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_email_display"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintBottom_toTopOf="@id/cv_address_display"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_mobile_number_display">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cv_email_display_layout"
+                    style="@style/ViewProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_email_text"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/email_view_profile"
+                        app:layout_constraintBottom_toTopOf="@id/tv_email_display"
+                        app:layout_constraintEnd_toEndOf="@id/cv_email_display_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cv_email_display_layout"
+                        app:layout_constraintTop_toTopOf="@+id/cv_email_display_layout"/>
+
+                    <TextView
+                        android:id="@+id/tv_email_display"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        app:layout_constraintBottom_toBottomOf="@+id/cv_email_display_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/cv_email_display_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cv_email_display_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_email_text"
+                        tools:text="abc@gmail.com"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_address_display"
+                style="@style/SignupCardViewStyle"
+                app:layout_constraintBottom_toTopOf="@+id/cv_view_social_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_email_display">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cv_address_display_layout"
+                    style="@style/ViewProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_address_text"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/address"
+                        app:layout_constraintBottom_toTopOf="@id/tv_address_display"
+                        app:layout_constraintEnd_toEndOf="@id/cv_address_display_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cv_address_display_layout"
+                        app:layout_constraintTop_toTopOf="@+id/cv_address_display_layout"/>
+
+                    <TextView
+                        android:id="@+id/tv_address_display"
+                        style="@style/EditTextCommonStyle.ProfileEditText"
+                        android:maxLines="5"
+                        android:textColor="@color/dustyGray"
+                        app:layout_constraintBottom_toBottomOf="@+id/cv_address_display_layout"
+                        app:layout_constraintEnd_toEndOf="@+id/cv_address_display_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cv_address_display_layout"
+                        app:layout_constraintTop_toBottomOf="@id/tv_address_text"
+                        tools:text="Dubai 839305"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_view_social_profile"
+                style="@style/SignupCardViewStyle"
+                android:layout_marginBottom="@dimen/spacing_15"
+                app:layout_constraintBottom_toTopOf="@id/btn_logout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cv_address_display">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cv_view_social_profile_display_layout"
+                    style="@style/ViewProfileConstraintLayoutStyle">
+
+                    <TextView
+                        android:id="@+id/tv_view_social_profile"
+                        style="@style/TextViewCommonStyle"
+                        android:text="@string/view_social_profile"
+                        android:textColor="@color/cerise_red"
+                        app:layout_constraintBottom_toBottomOf="@+id/cv_view_social_profile_display_layout"
+                        app:layout_constraintEnd_toEndOf="@id/cv_view_social_profile_display_layout"
+                        app:layout_constraintStart_toStartOf="@+id/cv_view_social_profile_display_layout"
+                        app:layout_constraintTop_toTopOf="@+id/cv_view_social_profile_display_layout"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.example.internproject_revamp.widgets.CLMaterialButton
+                android:id="@+id/btn_logout"
+                style="@style/MaterialButtonCommonStyle"
+                android:layout_marginBottom="@dimen/spacing_100"
+                android:text="@string/logout"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/sv_layout"
+                app:layout_constraintEnd_toEndOf="@id/sv_layout"
+                app:layout_constraintStart_toStartOf="@id/sv_layout"
+                app:layout_constraintTop_toBottomOf="@id/cv_view_social_profile"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
